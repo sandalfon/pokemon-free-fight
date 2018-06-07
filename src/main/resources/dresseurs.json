@@ -1,0 +1,41 @@
+[
+  {
+    "number": 0,
+    "name": "Bob",
+    "hp": 500,
+    "pokedex": {
+      "list": [
+        2,
+        5,
+        8,
+        12
+      ]
+    }
+  },
+  {
+    "number": 1,
+    "name": "Bill",
+    "hp": 450,
+    "pokedex": {
+      "list": [
+        15,
+        17,
+        22,
+        24
+      ]
+    }
+  },
+  {
+    "number": 2,
+    "name": "Joe",
+    "hp": 500,
+    "pokedex": {
+      "list": [
+        25,
+        38,
+        42,
+        47
+      ]
+    }
+  }
+]
