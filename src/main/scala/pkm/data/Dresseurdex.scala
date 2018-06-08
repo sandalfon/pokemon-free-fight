@@ -15,4 +15,6 @@ object Dresseurdex extends DresseurDecoder {
       case Xor.Left(errors) => throw new RuntimeException(s"Cannot load dresseur: $errors")
     }
   }
+
+
 }

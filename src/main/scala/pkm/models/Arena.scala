@@ -1,8 +1,17 @@
 package pkm.models
 
-import pkm.models.Dresseur
+import pkm.data.Dresseurdex
+import pkm.other.Utils
+
+import scala.util.Random
 
 class Arena {
-  val nbDresseur: Int =2
+
+
+
+
+
+
+
 
 }
