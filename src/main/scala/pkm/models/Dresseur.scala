@@ -2,14 +2,14 @@ package pkm.models
 
 import io.circe.{Decoder, HCursor, KeyDecoder}
 import pkm.data.Pokedex
-
+import pkm.models
 
 
 case class Dresseur(
                      number: Int,
                      name: String,
                      hp: Int,
-                     pokedex: PokedexInt
+                     pokedex: DresseurPokedex
                      //pokedex: List[Pokemon]
 
                    ) {
@@ -17,27 +17,47 @@ case class Dresseur(
 }
 
 case class PokedexInt(list: List[Int])
-//case class LocalPokedex(list : List[Pokemon])
 
+case class DresseurPokedex(list: List[Pokemon])
 
 
 trait DresseurDecoder {
 
   import io.circe.generic.semiauto._
 
-  implicit protected val pokedexIntDecoder = deriveDecoder[PokedexInt]
+  val pokemons = Pokedex.pokemons
+  //implicit protected val pokedexIntDecoder = deriveDecoder[PokedexInt]
 
-  //val globalPokedex = Pokedex.pokemons
- /* implicit protected val localPokedexDecoder: Decoder[List[Pokemon]] = new Decoder[List[Pokemon]]{
-    final def apply(c: HCursor): Decoder.Result[List[Pokemon]] =
-       for {
-        lst<- c.downField("list").as[List[Int]]
-      }yield(for{
-        i <- lst
-      }yield(Pokedex.pokemons(i))
-        )
+  implicit val dresseurPokedexDecoder: Decoder[DresseurPokedex] = Decoder.instance(c =>
+    for {
+      t <- c.downField("list").as[List[Int]]
+    } yield { DresseurPokedex(
+      for{ i <- t}
+        yield(pokemons.filter(p => p.number == i).head)
+    )
+    }
+  )
 
-  }*/
+
+
+
+ /* implicit val pokedexIntDecoder: Decoder[PokedexInt] = Decoder.instance(c =>
+    for {
+      t <- c.downField("list").as[List[Int]]
+    } yield { PokedexInt(
+      for{ i <- t}
+        yield(i)
+    )
+    }
+  )*/
+
+
+
+  /*implicit val pokedexIntDecoder: Decoder[PokedexInt] = Decoder.instance(c =>
+    for {
+      t <- c.downField("list").as[List[Int]]
+    } yield PokedexInt(t)
+  )*/
 
   implicit protected val dresseurDecoder = Decoder.forProduct4("number", "name", "hp", "pokedex")(Dresseur.apply)
 

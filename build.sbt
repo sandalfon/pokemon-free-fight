@@ -33,7 +33,8 @@ libraryDependencies in ThisBuild ++= {
     "com.typesafe.akka" %% "akka-http-testkit" % akkaV, /*% "test" */
     "de.heikoseeberger" %% "akka-http-circe" % akkaCirceV,
 
-    "io.circe" %% "circe-generic" % circeV,
+    "io.circe" %% "circe-generic"  % circeV,
+    "io.circe" %% "circe-parser"  % circeV,
 
     "org.typelevel" %% "cats" % catsV,
 
