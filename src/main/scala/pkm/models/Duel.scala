@@ -210,7 +210,10 @@ object Duel {
     }
     true
   }
-  
+
+  def roundLog = {
+
+  }
 
   override def toString: String = "P1: \n" + varStat1 + "\nP2: \n" + varStat2
 
