@@ -23,5 +23,5 @@ object Main extends App {
   println(s"Random: $randomVarStat ${randomVarStat.pokeOrder}" )
   println(s"Random: ${randomVarStat.printLineUp}" )
   println(Duel.toString)
-
+Duel.roundStart
 }

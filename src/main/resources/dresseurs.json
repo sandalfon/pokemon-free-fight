@@ -2,7 +2,7 @@
   {
     "number": 0,
     "name": "Bob",
-    "hp": 500,
+    "hp": 2500,
     "pokedex": {
       "list": [
         2,
@@ -15,7 +15,7 @@
   {
     "number": 1,
     "name": "Bill",
-    "hp": 450,
+    "hp": 2450,
     "pokedex": {
       "list": [
         2,
@@ -28,7 +28,7 @@
   {
     "number": 2,
     "name": "Joe",
-    "hp": 500,
+    "hp": 2500,
     "pokedex": {
       "list": [
         25,
